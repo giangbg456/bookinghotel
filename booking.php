@@ -1,6 +1,6 @@
 <?php
    include("admin/lib_db.php");
-//    include("admin/login.php");
+    include("admin/login.php");
 
     $date_in = isset($_POST['date_in']) ? $_POST['date_in'] : date('Y-m-d');
     $date_out = isset($_POST['date_out']) ? $_POST['date_out'] : date('Y-m-d',strtotime(date('Y-m-d').' + 1 days'));
@@ -22,16 +22,13 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-
-
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bookingg.css">
     <title>home</title>
 </head>
 
 <body>
-<header class="header">
+    <header class="header">
         <a href="index.php" class="logo">
             <img src="img/logo.jpg" style="width: 100px;">
         </a>
@@ -43,20 +40,16 @@
         </nav>
         <div class="icons">
             <div class="fas fa-bars" id="menu-btn"></div>
-            <div class="fas fa-search" id="search-btn"></div>
+
             <div class="fas fa-user" id="login-btn"><a href="admin/login.php"></a></div>
             <a href="booking.php"><button class="booking-btn" id="booking-btn">BOOK NOW!</button></a>
         </div>
 
-        <form action="" class="search-form">
-            <input type="search" placeholder="Search here..." id="search-box">
-            <label for="search-box" class="fas fa-search"></label>
-        </form>
-
+        
 
 
         <form action="" class="login-form" method="POST">
-            <img src="img/user.png" alt="" style="width:50%;  margin-left:50px;";>
+            <img src="img/user.png" alt="" style="width:50%;  margin-left:50px;" ;>
             <div class="form-group">
                 <label for="username" class="control-label">Username</label>
                 <input type="text" id="username" name="username" class="form-control">
@@ -95,11 +88,11 @@
                             <div class="col-md-6">
                                 <h1><?php echo $data["name"] ?></h2>
                                     <h2><?php echo $data['price'].".000 Đ"?><span>/ đêm</span></h2>
-                                        <div>
-                                            <button class="btn btn-primary book_now" type="button" data-toggle="modal"
-                                                data-target="#modal" data-id="<?php echo $data['id'] ?>">Book
-                                                now</button>
-                                        </div>
+                                    <div>
+                                        <button class="btn btn-primary book_now" type="button" data-toggle="modal"
+                                            data-target="#modal" data-id="<?php echo $data['id'] ?>">Book
+                                            now</button>
+                                    </div>
                             </div>
 
                         </div>
@@ -115,7 +108,7 @@
         </div>
     </section>
 
-    <script src="js/script.js"></script>
+    <script src="js/scriptt.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>
@@ -131,16 +124,18 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
     <script>
-    $(function() {
-        $("#checkin").datepicker();
-        $("#checkout").datepicker();
-    });
+        
+        $(function() {
+            $("#checkin").datepicker();
+            $("#checkout").datepicker();
+        });
 
-    $(document).on("click", ".book_now", function() {
-        var id = $(this).data('id');
-        $("#roomID").val(id);
+        
+        $(document).on("click", ".book_now", function() {
+            var id = $(this).data('id');
+            $("#roomID").val(id);
 
-    });
+        });
     </script>
 
 </body>

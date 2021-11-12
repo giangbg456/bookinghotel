@@ -13,25 +13,25 @@ text-center{
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-4">
-            <form action="" id="manage-category">
+            <form action="upload_category.php" id="manage-category" method="post">
                 <div class="card">
                     <div class="card-header">
                         Room Category Form
                     </div>
                     <div class="card-body">
-                        <input type="hidden" name="id">
+                        <input type="hidden" name="id" id = "id">
                         <div class="form-group">
                             <label class="control-label">Category</label>
-                            <input type="text" class="form-control" name="name" require="true">
+                            <input type="text" class="form-control" name="name" id = "category" require="true">
                         </div>
                         <div class="form-group">
                             <label class="control-label">Price</label>
-                            <input type="number" class="form-control text-right" name="price" step="5" min="0"
+                            <input type="number" class="form-control text-right" name="price"  id = "price"
                                 require="true">
                         </div>
                         <div class="form-group">
                             <label for="" class="control-label">Image</label>
-                            <input type="file" class="form-control" name="img" onchange="" require="true">
+                            <input type="file" class="form-control" name="img"  require="true" id = "img">
                         </div>
 
                     </div>
@@ -39,9 +39,7 @@ text-center{
                     <div class="card-footer">
                         <div class="row">
                             <div class="col-md-12">
-                                <button class="btn btn-sm btn-primary col-sm-3 offset-md-3"> Save</button>
-                                <button class="btn btn-sm btn-default col-sm-3" type="button" onclick="">
-                                    Cancel</button>
+                                <button class="btn btn-sm btn-primary col-sm-3 offset-md-3" name="submit" > Save</button>
                             </div>
                         </div>
                     </div>
@@ -80,8 +78,8 @@ text-center{
 										<p>Price : <b><?php echo $data['price'].".000 Đ"?></b></p>
 									</td>
 									<td class="text-center">
-										<button class="btn btn-sm btn-primary edit_cat" type="button" data-id="<?php echo $data['id'] ?>" data-name="<?php echo $data['name'] ?>" data-price="<?php echo $data['price'] ?>" data-cover_img="<?php echo $data['img'] ?>">Edit</button>
-										<button class="btn btn-sm btn-danger delete_cat" type="button" data-id="<?php echo $data['id'] ?>">Delete</button>
+										<button class="btn btn-sm btn-primary edit_cat" type="button" data-id="<?php echo $data['id'] ?>" data-name="<?php echo $data['name'] ?>" data-price="<?php echo $data['price'] ?>" data-img="<?php echo $data['img'] ?>">Edit</button>
+										<a href="delete_category.php?id=<?php echo $data['id'] ?>"><button class="btn btn-sm btn-danger delete_cat" type="button" >Delete</button></a>
 									</td>
 								</tr>
 								<?php }; ?>
@@ -96,13 +94,9 @@ text-center{
 
 <script>
     $('.edit_cat').click(function(){
-		start_load()
-		var cat = $('#manage-room')
-		cat.get(0).reset()
-		cat.find("[name='id']").val($(this).attr('data-id'))
-		cat.find("[name='room']").val($(this).attr('data-room'))
-		cat.find("[name='category_id']").val($(this).attr('data-category_id'))
-		cat.find("[name='status']").val($(this).attr('data-status'))
-		end_load()
+        $('#id').val($(this).attr("data-id"));
+		$('#category').val($(this).attr("data-name"));
+        $('#price').val($(this).attr("data-price"));
+        $('#img').val($(this).attr("data-img"));
 	})
 </script>

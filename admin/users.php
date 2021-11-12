@@ -1,13 +1,44 @@
 <div class="container-fluid">
-
     <div class="row">
-        <div class="col-lg-12">
-            <button class="btn btn-primary float-right btn-sm" id="new_user"><i class="fa fa-plus"></i> New user</button>
+        <div class="col-md-4">
+            <form action="upload_user.php" id="manage-room" method="post">
+                <div class="card">
+                    <div class="card-header">
+                        New User
+                    </div>
+                    <div class="card-body">
+                            <input type="hidden" name="id" id="id">
+                            <div class="form-group">
+                                <label class="control-label">Name</label>
+                                <input type="text" class="form-control" name="name" id ="name">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Username</label>
+                                <input type="text" class="form-control" name="user" id ="user">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">PassWord</label>
+                                <input type="password" class="form-control" name="pass" id ="pass">
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="control-label">Loại Tài Khoản</label>
+                                <select class="custom-select browser-default" name="status" id = "status">
+                                    <option value="1">Admin</option>
+                                    <option value="2">Khách Hàng</option>
+                                </select>
+                            </div>
+                        </div>
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button class="btn btn-sm btn-primary col-sm-3 offset-md-3" name="submit"> Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="card col-lg-12">
+        <div class="card col-md-8">
             <div class="card-body">
                 <table class="table-striped table-bordered col-md-12">
                     <thead>
@@ -37,24 +68,11 @@
                             <td>
                                 <?php echo $data['username'] ?>
                             </td>
-                            <td>
-                                <center>
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-primary">Action</button>
-                                        <button type="button"
-                                            class="btn btn-primary dropdown-toggle dropdown-toggle-split"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item edit_user" href="javascript:void(0)"
-                                                data-id='<?php echo $row['id'] ?>'>Edit</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item delete_user" href="javascript:void(0)"
-                                                data-id='<?php echo $row['id'] ?>'>Delete</a>
-                                        </div>
-                                    </div>
-                                </center>
+                            <td class="text-center">
+                                <button class="btn btn-sm btn-primary edit_cat" type="button"
+                                    data-id="<?php echo $data['id'] ?>" data-name="<?php echo $data['name'] ?>" data-user="<?php echo $data['username'] ?>" data-pass="<?php echo $data['password'] ?>" data-status="<?php echo $data['type'] ?>">Edit</button>
+                                <a href="delete_user.php?id=<?php echo $data["id"]?>"><button
+                                        class="btn btn-sm btn-danger delete_cat" type="button">Delete</button></a>
                             </td>
                         </tr>
                         <?php } ?>
@@ -65,3 +83,12 @@
     </div>
 
 </div>
+<script>
+    $('.edit_cat').click(function(){
+        $('#id').val($(this).attr("data-id"));
+		$('#name').val($(this).attr("data-name"));
+        $('#user').val($(this).attr("data-user"));
+        $('#pass').val($(this).attr("data-pass"));
+        $('#status').val($(this).attr("data-status"));
+	})
+</script>

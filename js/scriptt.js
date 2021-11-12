@@ -1,13 +1,6 @@
-var searchForm = document.querySelector('.search-form');
-
-
-
 var videoBtn = document.querySelectorAll('.vid-btn');
 
-document.querySelector('#search-btn').onclick = () => {
-        searchForm.classList.toggle('active');
-    }
-    // -----------js login---------
+// -----------js login---------
 
 var loginForm = document.querySelector('.login-form');
 

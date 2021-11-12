@@ -1,3 +1,8 @@
+<?php
+   include("admin/lib_db.php");
+    include("admin/login.php");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,16 +45,12 @@
         </nav>
         <div class="icons">
             <div class="fas fa-bars" id="menu-btn"></div>
-            <div class="fas fa-search" id="search-btn"></div>
+
             <div class="fas fa-user" id="login-btn"><a href="admin/login.php"></a></div>
             <a href="booking.php"><button class="booking-btn" id="booking-btn">BOOK NOW!</button></a>
         </div>
 
-        <form action="" class="search-form">
-            <input type="search" placeholder="Search here..." id="search-box">
-            <label for="search-box" class="fas fa-search"></label>
-        </form>
-
+        
 
 
         <form action="" class="login-form" method="POST">
@@ -193,7 +194,7 @@
 
     </footer>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/scriptt.js"></script>
 </body>
 
 </html>

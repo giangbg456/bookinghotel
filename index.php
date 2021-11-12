@@ -44,8 +44,7 @@
         </nav>
         <div class="icons">
             <div class="fas fa-bars" id="menu-btn"></div>
-            <div class="fas fa-search" id="search-btn"></div>
-            <div class="fas fa-user" id="login-btn"><a href="admin/login.php"></a></div>
+            <div class="fas fa-user" id="login-btn"></div>
             <a href="booking.php"><button class="booking-btn" id="booking-btn">BOOK NOW!</button></a>
         </div>
 
@@ -132,7 +131,7 @@
             </div>
             <div class="row bg-clor reveal">
                 <div class="img-col">
-                    <img src="img/photo-1564501049412-61c2a3083791.jfif" alt="">
+                    <img src="img/phong1.png" alt="">
                 </div>
                 <div class="info-col col-sm info-room">
                     <span class="text-primaryy">300.000Đ</span> /1 Đêm
@@ -157,7 +156,7 @@
             </div>
             <div class="row bg-clor reveal">
                 <div class="img-col">
-                    <img src="img/sasha-stories-qzt0DKKG8Pc-unsplash.jpg" alt="">
+                    <img src="img/phong2.png" alt="">
                 </div>
                 <div class="info-col col-sm info-room">
                     <span class="text-primaryy">1.500.000Đ</span> /1 Đêm
@@ -256,7 +255,7 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="box">
-                        <img src="img/justin-docanto-1NEVlrYE-uU-unsplash.jpg" alt="">
+                        <img src="img/phong1.png" alt="">
 
                         <h3>Hoàng Minh Giang</h3>
                         <p>Mọi thứ đều sạch sẽ và được bảo quản tốt và có mọi thứ tôi cần. Mỗi khi ở trong thị trấn, tôi đều gặp những người chủ và họ rất tốt và hữu ích. Tôi muốn giới thiệu khách sạn này cho bất kỳ ai muốn có một nơi yên tĩnh an toàn</p>
@@ -271,7 +270,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="box">
-                        <img src="img//li-yang-a8iCZvtrHpQ-unsplash.jpg" alt="">
+                        <img src="img/phong2.png" alt="">
 
                         <h3>Phạm Anh Duy</h3>
                         <p>Mọi thứ đều sạch sẽ và được bảo quản tốt và có mọi thứ tôi cần. Mỗi khi ở trong thị trấn, tôi đều gặp những người chủ và họ rất tốt và hữu ích. Tôi muốn giới thiệu khách sạn này cho bất kỳ ai muốn có một nơi yên tĩnh an toàn</p>
@@ -286,7 +285,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="box">
-                        <img src="img/nik-lanus-YMOHw3F1Hdk-unsplash.jpg" alt="">
+                        <img src="img/phong3.png" alt="">
 
                         <h3>Cao Thị Châm</h3>
                         <p>Mọi thứ đều sạch sẽ và được bảo quản tốt và có mọi thứ tôi cần. Mỗi khi ở trong thị trấn, tôi đều gặp những người chủ và họ rất tốt và hữu ích. Tôi muốn giới thiệu khách sạn này cho bất kỳ ai muốn có một nơi yên tĩnh an toàn</p>
@@ -301,7 +300,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="box">
-                        <img src="img/sasha-stories-qzt0DKKG8Pc-unsplash.jpg" alt="">
+                        <img src="img/room1.jpg" alt="">
 
                         <h3>Mixi Moi</h3>
                         <p>Mọi thứ đều sạch sẽ và được bảo quản tốt và có mọi thứ tôi cần. Mỗi khi ở trong thị trấn, tôi đều gặp những người chủ và họ rất tốt và hữu ích. Tôi muốn giới thiệu khách sạn này cho bất kỳ ai muốn có một nơi yên tĩnh an toàn</p>
@@ -384,7 +383,7 @@
 
     </footer>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/scriptt.js"></script>
 </body>
 
 </html>

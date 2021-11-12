@@ -1,3 +1,4 @@
+
 <nav id="sidebar">
         <div class="sidebar-list">
             <a href="admin.php?page=home" class="nav-item nav-home"><span class='icon-field'><i class="fa fa-home"></i></span> Home</a>

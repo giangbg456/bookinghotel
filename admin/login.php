@@ -13,13 +13,14 @@
     
  
     $query = "SELECT COUNT(*) FROM users WHERE username = '$username' AND PASSWORD = '$password'";
-    
+    $sql = "SELECT * FROM users WHERE username = '$username' AND PASSWORD = '$password'";
     //thực thi truy vấn
     $data = select_one($query);
     $count = 0;
         foreach ($data as $item) {
             $count += $item;
         }
+
     if ($count>0) {
  
         $_SESSION['username'] = $username;
@@ -31,15 +32,11 @@
     }
     else
     {
-         echo '<script language="javascript">';
-         echo 'alert("Tên đăng nhập hoặc mật khẩu không đúng !")';
-         echo '</script>';
+        //  echo '<script language="javascript">';
+        //  echo 'alert("Tên đăng nhập hoặc mật khẩu không đúng !")';
+        //  echo '</script>';
     }
  
-    if (isset($_POST["submit"])) {
-        echo '<script language="javascript">';
-        echo 'alert("Tên đăng nhập hoặc mật khẩu không đúng !")';
-        echo '</script>';    
-    }
+   
 
 ?>

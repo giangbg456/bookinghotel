@@ -31,12 +31,12 @@
                         </div>
                         <div class="form-group">
                             <label for="date_in">Check-in Date</label>
-                            <input type="text" class="form-control datepicker" id="checkin" name="date_in"
+                            <input type="date" class="form-control datepicker" id="checkin" name="date_in"
                                 autocomplete="off" value="<?php echo $date_in?>">
                         </div>
                         <div class="form-group">
                             <label for="date_in">Check-out Date</label>
-                            <input type="text" class="form-control datepicker" id="checkout" name="date_out"
+                            <input type="date" class="form-control datepicker" id="checkout" name="date_out"
                                 autocomplete="off" value="<?php echo $date_out?>">
                         </div>
                         <button name="save" class="btn-primary" style="float:right; font-size:20px;"

@@ -1,3 +1,8 @@
+<?php
+   include("admin/lib_db.php");
+    include("admin/login.php");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,17 +44,12 @@
         </nav>
         <div class="icons">
             <div class="fas fa-bars" id="menu-btn"></div>
-            <div class="fas fa-search" id="search-btn"></div>
+ 
             <div class="fas fa-user" id="login-btn"><a href="admin/login.php"></a></div>
             <a href="booking.php"><button class="booking-btn" id="booking-btn">BOOK NOW!</button></a>
         </div>
 
-        <form action="" class="search-form">
-            <input type="search" placeholder="Search here..." id="search-box">
-            <label for="search-box" class="fas fa-search"></label>
-        </form>
-
-
+        
 
         <form action="" class="login-form" method="POST">
             <img src="img/user.png" alt="" style="width:50%;  margin-left:50px;";>
@@ -78,7 +78,7 @@
                     <div class="col_phong">
                         <h3>Single Room</h3>
                         <p>Nunc id turpis ligula. Orcivarius natoque penatibus et magdispa montes, nascetur civarius natoque penatibus</p>
-                        <button class="booknow-btn">Book now!</button>
+                        <a href="booking.php"><button class="booknow-btn">Book now!</button></a>
                     </div>
                 </div>
                 <div class="col">
@@ -86,7 +86,7 @@
                     <div class="col_phong">
                         <h3>Double Room</h3>
                         <p>Nunc id turpis ligula. Orcivarius natoque penatibus et magdispa montes, nascetur civarius natoque penatibus</p>
-                        <button class="booknow-btn">Book now!</button>
+                        <a href="booking.php"><button class="booknow-btn">Book now!</button></a>
                     </div>
                 </div>
                 <div class="col">
@@ -94,7 +94,7 @@
                     <div class="col_phong">
                         <h3>Delux Room</h3>
                         <p>Nunc id turpis ligula. Orcivarius natoque penatibus et magdispa montes, nascetur civarius natoque penatibus</p>
-                        <button class="booknow-btn">Book now!</button>
+                        <a href="booking.php"><button class="booknow-btn">Book now!</button></a>
                     </div>
                 </div>
             </div>
@@ -104,7 +104,7 @@
                     <div class="col_phong">
                         <h3>Single Room</h3>
                         <p>Nunc id turpis ligula. Orcivarius natoque penatibus et magdispa montes, nascetur civarius natoque penatibus</p>
-                        <button class="booknow-btn">Book now!</button>
+                        <a href="booking.php"><button class="booknow-btn">Book now!</button></a>
                     </div>
                 </div>
                 <div class="col">
@@ -112,7 +112,7 @@
                     <div class="col_phong">
                         <h3>Double Room</h3>
                         <p>Nunc id turpis ligula. Orcivarius natoque penatibus et magdispa montes, nascetur civarius natoque penatibus</p>
-                        <button class="booknow-btn">Book now!</button>
+                        <a href="booking.php"><button class="booknow-btn">Book now!</button></a>
                     </div>
                 </div>
                 <div class="col">
@@ -120,7 +120,7 @@
                     <div class="col_phong">
                         <h3>Delux Room</h3>
                         <p>Nunc id turpis ligula. Orcivarius natoque penatibus et magdispa montes, nascetur civarius natoque penatibus</p>
-                        <button class="booknow-btn">Book now!</button>
+                        <a href="booking.php"><button class="booknow-btn">Book now!</button></a>
                     </div>
                 </div>
             </div>
@@ -197,7 +197,7 @@
 
     </footer>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/scriptt.js"></script>
 </body>
 
 </html>

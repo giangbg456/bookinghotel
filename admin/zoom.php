@@ -4,20 +4,20 @@
         <div class="row">
             <!-- FORM Panel -->
             <div class="col-md-4">
-                <form action="" id="manage-room">
+                <form action="upload_room.php" id="manage-room" method="post">
                     <div class="card">
                         <div class="card-header">
                             Room Form
                         </div>
                         <div class="card-body">
-                            <input type="hidden" name="id">
+                            <input type="hidden" name="id" id="id">
                             <div class="form-group">
                                 <label class="control-label">Room</label>
-                                <input type="text" class="form-control" name="room">
+                                <input type="text" class="form-control" name="room" id ="room">
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Category</label>
-                                <select class="custom-select browser-default" name="category_id">
+                                <select class="custom-select browser-default" name="category_id" id ="category_id">
                                     <?php
 									include("lib_db.php");
 									$sql = "select * from room_category ";
@@ -33,7 +33,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="" class="control-label">Trạng Thái</label>
-                                <select class="custom-select browser-default" name="status">
+                                <select class="custom-select browser-default" name="status" id = "status">
                                     <option value="0">Khả Dụng</option>
                                     <option value="1">Không Khả Dụng</option>
                                 </select>
@@ -43,9 +43,7 @@
                         <div class="card-footer">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <button class="btn btn-sm btn-primary col-sm-3 offset-md-3"> Save</button>
-                                    <button class="btn btn-sm btn-default col-sm-3" type="button"
-                                        onclick="$('#manage-room').get(0).reset()"> Cancel</button>
+                                        <button class="btn btn-sm btn-primary col-sm-3 offset-md-3" name="submit" > Save</button>
                                 </div>
                             </div>
                         </div>
@@ -93,7 +91,7 @@
 									<?php endif; ?>
 									<td class="text-center">
                                         <button class="btn btn-sm btn-primary edit_cat" type="button"  data-id="<?php echo $data['id'] ?>" data-room="<?php echo $data['room'] ?>" data-category="<?php echo $data['category-id'] ?>" data-status="<?php echo $data['status'] ?>" >Edit</button>
-										<button class="btn btn-sm btn-danger delete_cat" type="button" data-id="<?php echo $data['id'] ?>">Delete</button>
+										<a href="delete_room.php?id=<?php echo $data['id'] ?>"><button class="btn btn-sm btn-danger delete_cat" type="button" >Delete</button>
 									</td>
 								</tr>
 								<?php }; ?>
@@ -107,3 +105,12 @@
     </div>
 
 </div>
+
+<script>
+    $('.edit_cat').click(function(){
+        $('#id').val($(this).attr("data-id"));
+		$('#room').val($(this).attr("data-room"));
+        $('#category_id').val($(this).attr("data-category"));
+        $('#status').val($(this).attr("data-status"));
+	})
+</script>
