@@ -1,7 +1,22 @@
 <?php
-   include("admin/lib_db.php");
+    include("admin/lib_db.php");
     include("admin/login.php");
-
+    $data['name'] = isset($_POST['name']) ? $_POST['name'] : '';
+    $data['mail'] = isset($_POST['mail']) ? $_POST['mail'] : '';
+    $data['tel'] = isset($_POST['tel']) ? $_POST['tel'] : '';
+    $data['mes'] = isset($_POST['mes']) ? $_POST['mes'] : '';
+    $name = $data['name'];
+    $mail = $data['mail'];
+    $tel = $data['tel'];
+    $mes = $data['mes'];
+    if(isset($_POST["save"])){        
+        // $query = "INSERT INTO `checked`( `name`, `contact`, `date_in`, `date_out`, `room_id`) VALUES ('$name','$contact','$date_in1','$date_out1','$roomid')";
+        $query = "INSERT INTO `phanhoi`( `name`, `mail`, `tel`, `mes`) VALUES ('$name','$mail','$tel','$mes')";
+        exec_update($query);
+        echo '<script language="javascript">';
+        echo 'alert("Phản hồi Thành Công!")';
+        echo '</script>';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -100,26 +115,26 @@
                 </div>
             </div>
             <div class="contactForm">
-                <form>
+                <form action="contact.php" method = "post">
                     <h2>Send Message</h2>
                     <div class="inputBox">
-                        <input type="text" name="" required="required">
+                        <input type="text" name="name" required="required">
                         <span>Your Name</span>
                     </div>
                     <div class="inputBox">
-                        <input type="text" name="" required="required">
+                        <input type="text" name="mail" required="required">
                         <span>Your Mail</span>
                     </div>
                     <div class="inputBox">
-                        <input type="text" name="" required="required">
-                        <span>Your Subject</span>
+                        <input type="text" name="tel" required="required">
+                        <span>Your TelePhone</span>
                     </div>
                     <div class="inputBox">
-                        <textarea required="required"></textarea>
+                        <textarea required="required" name="mes"></textarea>
                         <span>Your Message</span>
                     </div>
                     <div class="inputBox">
-                        <input type="submit" name="" value="Send">
+                        <input type="submit" name="save" value="Send">
                     </div>
                 </form>
             </div>

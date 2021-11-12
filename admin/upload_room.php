@@ -17,7 +17,7 @@
         {
             $query = "UPDATE `rooms` SET `room`='$room',`category-id`='$category',`status`='$status' WHERE  `id`= $id";
             exec_update($query);
-            header("location: admin.php?page=room");
+            header("location: admin.php?page=zoom");
 
         }
         else{
