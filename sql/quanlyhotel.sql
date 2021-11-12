@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 11, 2021 lúc 03:07 PM
+-- Thời gian đã tạo: Th10 12, 2021 lúc 01:58 PM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.12
 
@@ -20,21 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `quanlyhotel`
 --
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `booking`
---
-
-CREATE TABLE `booking` (
-  `id` int(255) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `contact` varchar(255) NOT NULL,
-  `date_in` datetime NOT NULL,
-  `date_out` datetime NOT NULL,
-  `room_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -59,9 +44,15 @@ CREATE TABLE `checked` (
 --
 
 INSERT INTO `checked` (`id`, `ref_no`, `room_id`, `name`, `contact_no`, `date_in`, `date_out`, `status`, `date_update`) VALUES
-(1, '9808571036', 1, 'John', '+14526-5455-44', '2021-11-10 03:29:51', '2021-11-13 09:29:52', 1, '2021-11-10 09:31:11'),
-(2, '5615053826\n', 1, 'giang', '123123', '2021-11-11 00:00:00', '2021-11-12 00:00:00', 0, '2021-11-11 19:36:33'),
-(4, '621615666\n', 1, 'giang', '123123', '2021-11-12 00:00:00', '2021-11-20 00:00:00', 0, '2021-11-11 19:58:36');
+(1, '9808571036', 1, 'John', '+14526-5455-44', '2021-11-10 03:29:51', '2021-11-13 09:29:52', 2, '2021-11-10 09:31:11'),
+(2, '5615053826\n', 1, 'giang', '123123', '2021-11-11 00:00:00', '2021-11-12 00:00:00', 2, '2021-11-11 19:36:33'),
+(4, '621615666\n', 1, 'giang', '123123', '2021-11-12 00:00:00', '2021-11-20 00:00:00', 2, '2021-11-11 19:58:36'),
+(5, '197885764\n', 3, 'nghia', '12345', '2021-11-12 00:00:00', '2021-11-13 00:00:00', 2, '2021-11-12 11:53:59'),
+(6, '6126174263\n', 1, 'nghia', '22222', '2021-11-20 00:00:00', '2021-11-27 00:00:00', 2, '2021-11-12 12:00:21'),
+(17, '693289600\n', 3, 'cham', 'caobang', '2021-11-28 00:00:00', '2021-11-30 00:00:00', 2, '2021-11-12 15:00:57'),
+(18, '8070918287\n', 2, 'quan', 'bg123', '2021-11-11 00:00:00', '2021-11-27 00:00:00', 1, '2021-11-12 15:01:51'),
+(19, '4018101758\n', 3, 'bao000', '0255', '2021-11-13 00:00:00', '2021-11-14 00:00:00', 1, '2021-11-12 15:06:42'),
+(20, '8595506816\n', 1, 'giang', '4444', '2021-11-13 00:00:00', '2021-11-26 00:00:00', 0, '2021-11-12 19:44:18');
 
 -- --------------------------------------------------------
 
@@ -81,9 +72,9 @@ CREATE TABLE `rooms` (
 --
 
 INSERT INTO `rooms` (`id`, `room`, `category-id`, `status`) VALUES
-(1, 'Room-100', 1, 0),
-(2, 'Room-101', 3, 0),
-(3, 'Room-500', 4, 0);
+(2, 'Room-102', 3, 0),
+(3, 'Room-500', 4, 0),
+(6, 'Room-100', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -104,7 +95,7 @@ CREATE TABLE `room_category` (
 
 INSERT INTO `room_category` (`id`, `name`, `price`, `img`) VALUES
 (1, 'PRESIDENT ROOM', 1.999, 'room1.jpg'),
-(3, 'SINGLE ROOM', 250, 'room2.jpg'),
+(3, 'SINGLE ROOM', 250, 'phong3.png'),
 (4, 'DOUBLE ROOM', 500, 'room3.jpg');
 
 -- --------------------------------------------------------
@@ -126,18 +117,12 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `password`, `type`) VALUES
-(1, 'Giangadmin', 'admin', 'admin123', 1),
+(1, 'Giangadminn', 'admin', 'admin123', 1),
 (2, 'giangmh', 'giang', '1', 2);
 
 --
 -- Chỉ mục cho các bảng đã đổ
 --
-
---
--- Chỉ mục cho bảng `booking`
---
-ALTER TABLE `booking`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Chỉ mục cho bảng `checked`
@@ -168,34 +153,28 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT cho bảng `booking`
---
-ALTER TABLE `booking`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-
---
 -- AUTO_INCREMENT cho bảng `checked`
 --
 ALTER TABLE `checked`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT cho bảng `rooms`
 --
 ALTER TABLE `rooms`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `room_category`
 --
 ALTER TABLE `room_category`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
