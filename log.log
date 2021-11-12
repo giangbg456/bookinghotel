@@ -627,3 +627,5 @@
 12.11.2021 04:21:08 sql=[SELECT COUNT(*) FROM users WHERE username = '' AND PASSWORD = ''] 
 12.11.2021 04:21:32 sql=[SELECT COUNT(*) FROM users WHERE username = '' AND PASSWORD = ''] 
 12.11.2021 04:21:32 <!-- sql=[INSERT INTO `phanhoi`( `name`, `mail`, `tel`, `mes`) VALUES ('giang','hoang@gmail.com','123','dịch vụ tuyệt vời')] --> 
+12.11.2021 04:44:44 sql=[SELECT COUNT(*) FROM users WHERE username = '' AND PASSWORD = ''] 
+12.11.2021 04:44:45 sql=[select * from room_category ] 
