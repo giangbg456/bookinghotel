@@ -1,22 +1,7 @@
 <?php
-    include("admin/lib_db.php");
+   include("admin/lib_db.php");
     include("admin/login.php");
-    $data['name'] = isset($_POST['name']) ? $_POST['name'] : '';
-    $data['mail'] = isset($_POST['mail']) ? $_POST['mail'] : '';
-    $data['tel'] = isset($_POST['tel']) ? $_POST['tel'] : '';
-    $data['mes'] = isset($_POST['mes']) ? $_POST['mes'] : '';
-    $name = $data['name'];
-    $mail = $data['mail'];
-    $tel = $data['tel'];
-    $mes = $data['mes'];
-    if(isset($_POST["save"])){        
-        // $query = "INSERT INTO `checked`( `name`, `contact`, `date_in`, `date_out`, `room_id`) VALUES ('$name','$contact','$date_in1','$date_out1','$roomid')";
-        $query = "INSERT INTO `phanhoi`( `name`, `mail`, `tel`, `mes`) VALUES ('$name','$mail','$tel','$mes')";
-        exec_update($query);
-        echo '<script language="javascript">';
-        echo 'alert("Phản hồi Thành Công!")';
-        echo '</script>';
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,30 +28,27 @@
 
 
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
-    <title>contact</title>
+    <title>room</title>
 </head>
 
 <body>
 <header class="header">
-        <a href="index.php" class="logo">
-            <img src="img/logo.jpg" style="width: 100px;">
-        </a>
-        <nav class="navbar">
-            <a href="index.php">home</a>
-            <a href="phong.php">Rooms</a>
-            <a href="events.php">events</a>
-            <a href="contact.php">contact</a>
-        </nav>
-        <div class="icons">
-            <div class="fas fa-bars" id="menu-btn"></div>
-
-            <div class="fas fa-user" id="login-btn"><a href="admin/login.php"></a></div>
-            <a href="booking.php"><button class="booking-btn" id="booking-btn">BOOK NOW!</button></a>
-        </div>
+    <a href="index.html" class="logo">
+        <img src="img/logo.jpg" style="width: 100px;">
+    </a>
+    <nav class="navbar">
+        <a href="index.html">home</a>
+        <a href="phong.html">Rooms</a>
+        <a href="events.html">events</a>
+        <a href="contact.html">contact</a>
+    </nav>
+    <div class="icons">
+        <div class="fas fa-bars" id="menu-btn"></div>
+        <div class="fas fa-user" id="login-btn"></div>
+        <a href="booking.html"><button class="booking-btn" id="booking-btn">BOOK NOW!</button></a>
+    </div>
 
         
-
 
         <form action="" class="login-form" method="POST">
             <img src="img/user.png" alt="" style="width:50%;  margin-left:50px;";>
@@ -82,66 +64,71 @@
         </form>
 
     </header>
-    <section class="contact">
+    <section class="home" id="home">
         <div class="bannerphong">
             <img class="bannerphong" src="img/bedroom.jpg">
         </div>
-        <div class="contentct">
-            <h2>Contact Us</h2>
-            <p>Thank you for your interest in staying at the San Mateo Inn. We appreciate your booking directly by using the booking button below.  Feel free to give us a call if you need help.  We truly look forward to seeing you!</p>
-        </div>
-        <div class="containerct">
-            <div class="contactInfo">
-                <div class="box">
-                    <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-                    <div class="text">
-                        <h3>Address</h3>
-                        <p>175 Tây Sơn<br>Đống Đa, Hà Nội,<br>Việt Nam</p>
+        <h3 style="margin-top: 70px;">CONSCIOUS HOSPITALITY</h3>
+        <h1 style="margin-top: 20px; font-size: 45px;">Our Favorite Room</h1>
+        <div class="container_phong">
+            <div class="row align-items-start">
+                <div class="col">
+                    <img src="img/phong1.png">
+                    <div class="col_phong">
+                        <h3>Single Room</h3>
+                        <p>Nunc id turpis ligula. Orcivarius natoque penatibus et magdispa montes, nascetur civarius natoque penatibus</p>
+                        <a href="booking.php"><button class="booknow-btn">Book now!</button></a>
                     </div>
                 </div>
-                <div class="box">
-                    <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
-                    <div class="text">
-                        <h3>Phone</h3>
-                        <p>(+84) 9999999999999</p>
+                <div class="col">
+                    <img src="img/phong2.png">
+                    <div class="col_phong">
+                        <h3>Double Room</h3>
+                        <p>Nunc id turpis ligula. Orcivarius natoque penatibus et magdispa montes, nascetur civarius natoque penatibus</p>
+                        <a href="booking.php"><button class="booknow-btn">Book now!</button></a>
                     </div>
                 </div>
-                <div class="box">
-                    <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></i></div>
-                    <div class="text">
-                        <h3>Email</h3>
-                        <p>Hello@gmail.com</p>
+                <div class="col">
+                    <img src="img/phong3.png">
+                    <div class="col_phong">
+                        <h3>Delux Room</h3>
+                        <p>Nunc id turpis ligula. Orcivarius natoque penatibus et magdispa montes, nascetur civarius natoque penatibus</p>
+                        <a href="booking.php"><button class="booknow-btn">Book now!</button></a>
                     </div>
                 </div>
             </div>
-            <div class="contactForm">
-                <form action="contact.php" method = "post">
-                    <h2>Send Message</h2>
-                    <div class="inputBox">
-                        <input type="text" name="name" required="required">
-                        <span>Your Name</span>
+            <div class="row align-items-center">
+                <div class="col">
+                    <img src="img/phong1.png">
+                    <div class="col_phong">
+                        <h3>Single Room</h3>
+                        <p>Nunc id turpis ligula. Orcivarius natoque penatibus et magdispa montes, nascetur civarius natoque penatibus</p>
+                        <a href="booking.php"><button class="booknow-btn">Book now!</button></a>
                     </div>
-                    <div class="inputBox">
-                        <input type="text" name="mail" required="required">
-                        <span>Your Mail</span>
+                </div>
+                <div class="col">
+                    <img src="img/phong2.png">
+                    <div class="col_phong">
+                        <h3>Double Room</h3>
+                        <p>Nunc id turpis ligula. Orcivarius natoque penatibus et magdispa montes, nascetur civarius natoque penatibus</p>
+                        <a href="booking.php"><button class="booknow-btn">Book now!</button></a>
                     </div>
-                    <div class="inputBox">
-                        <input type="text" name="tel" required="required">
-                        <span>Your TelePhone</span>
+                </div>
+                <div class="col">
+                    <img src="img/phong3.png">
+                    <div class="col_phong">
+                        <h3>Delux Room</h3>
+                        <p>Nunc id turpis ligula. Orcivarius natoque penatibus et magdispa montes, nascetur civarius natoque penatibus</p>
+                        <a href="booking.php"><button class="booknow-btn">Book now!</button></a>
                     </div>
-                    <div class="inputBox">
-                        <textarea required="required" name="mes"></textarea>
-                        <span>Your Message</span>
-                    </div>
-                    <div class="inputBox">
-                        <input type="submit" name="save" value="Send">
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
-        
-    </section>
 
+
+
+
+    </section>
     <footer class="bg-dark" style="height: 100%;">
         <div class="container">
             <div class="row">
